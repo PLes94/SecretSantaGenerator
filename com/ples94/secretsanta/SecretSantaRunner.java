@@ -1,3 +1,5 @@
+package com.ples94.secretsanta;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
