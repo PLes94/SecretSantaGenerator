@@ -11,18 +11,23 @@ public class SecretSantaRunner {
 //      List<String> list = Arrays.asList("Monika", "Ola", "Paweł", "Bogusia", "Ania", "Szymon", "Bartek", "Natka", "Piotrek");
         List<String> list = Arrays.asList("Monika", "Ola", "Paweł", "Piotr", "Marek", "Patrycja", "Beata", "Marcin", "Łukasz", "Irenka");
 
-        System.out.println(list);
-
         List<String> newList = new ArrayList<>(list);
         Collections.shuffle(newList);
 
-        for (int i = 0; i < list.size(); i++) {
+        int i = 0;
+        while (i < list.size()) {
             if (list.get(i).equals(newList.get(i))) {
                 Collections.shuffle(newList);
                 i = 0;
+            } else {
+                i++;
             }
         }
 
-        System.out.println(newList);
+        // return list of respective donors and recipients
+        for (i = 0; i < list.size(); i++) {
+            String verbType = list.get(i).endsWith("a") ? " wylosowała" : " wylosował";
+            System.out.println(list.get(i) + verbType + " osobę: " + newList.get(i));
+        }
     }
 }
